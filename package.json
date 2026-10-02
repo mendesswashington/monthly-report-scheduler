@@ -1,0 +1,16 @@
+{
+  "name": "monthly-report-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agendador externo dos relatórios mensais do api-report",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "dev": "node --env-file-if-exists=.env --watch src/index.js",
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/schedule.js && node --check src/report-client.js"
+  }
+}

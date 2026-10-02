@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "api tsx",
+        "skipFiles": ["<node_internals>/**"],
+        "runtimeExecutable": "tsx",
+        "args": ["src/http/server.ts"],
+        "env": {
+          "NODE_ENV": "development"
+        }
+      }
+    ]
+  }
+  

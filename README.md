@@ -1,7 +1,7 @@
 # Monthly Report Scheduler
 
 Aplicação externa responsável por chamar o job mensal do `api-report`. Por padrão,
-executa no dia 1 às 00:05 no fuso `America/Sao_Paulo`.
+executa no dia 1 às 00:05 no fuso `America/Bahia`.
 
 ## Configuração
 

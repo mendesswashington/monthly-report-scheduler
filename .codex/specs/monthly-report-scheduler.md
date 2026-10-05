@@ -10,7 +10,7 @@ O `api-report` expõe `POST /jobs/monthly-reports`, protegido por `x-job-secret`
 
 ## Requirements
 
-- Agendar a execução para todo dia 1 às 00:05 em `America/Sao_Paulo` por padrão.
+- Agendar a execução para todo dia 1 às 00:05 em `America/Bahia` por padrão.
 - Chamar o endpoint usando URL e segredo configurados por ambiente.
 - Repetir falhas transitórias sem duplicar relatórios.
 - Expor health check com próxima e última execução.

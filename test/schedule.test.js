@@ -2,11 +2,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { nextMonthlyRun } from '../src/schedule.js';
 
-const schedule = { timeZone: 'America/Sao_Paulo', hour: 0, minute: 5 };
+const schedule = { timeZone: 'America/Bahia', hour: 0, minute: 5 };
 
 test('schedules a configured day in the current month before its execution time', () => {
   const result = nextMonthlyRun(new Date('2026-10-05T14:00:00.000Z'), {
-    timeZone: 'America/Sao_Paulo',
+    timeZone: 'America/Bahia',
     day: 5,
     hour: 12,
     minute: 0,
@@ -16,7 +16,7 @@ test('schedules a configured day in the current month before its execution time'
 
 test('schedules a configured day in the next month after its execution time', () => {
   const result = nextMonthlyRun(new Date('2026-10-05T15:01:00.000Z'), {
-    timeZone: 'America/Sao_Paulo',
+    timeZone: 'America/Bahia',
     day: 5,
     hour: 12,
     minute: 0,

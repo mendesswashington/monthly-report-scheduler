@@ -28,6 +28,7 @@ export function loadConfig() {
     jobSecret: secret,
     port: integer('PORT', 8090, 1, 65535),
     timeZone: process.env.SCHEDULE_TIME_ZONE?.trim() || 'America/Sao_Paulo',
+    day: integer('SCHEDULE_DAY', 1, 1, 28),
     hour: integer('SCHEDULE_HOUR', 0, 0, 23),
     minute: integer('SCHEDULE_MINUTE', 5, 0, 59),
     timeoutMs: integer('REQUEST_TIMEOUT_MS', 30000, 1000, 300000),

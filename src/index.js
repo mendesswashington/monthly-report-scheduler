@@ -68,7 +68,7 @@ const server = createServer(async (request, response) => {
 });
 
 const scheduler = createMonthlyScheduler({
-  schedule: { timeZone: config.timeZone, hour: config.hour, minute: config.minute },
+  schedule: { timeZone: config.timeZone, day: config.day, hour: config.hour, minute: config.minute },
   task: run,
   onScheduled(nextRun) {
     state.nextRunAt = nextRun.toISOString();

@@ -17,6 +17,9 @@ node --env-file-if-exists=.env src/index.js
 ```
 
 As duas aplicações devem possuir o mesmo `MONTHLY_REPORT_JOB_SECRET`.
+O dia da execução pode ser definido por `SCHEDULE_DAY` (de 1 a 28), com
+valor padrão `1`. Hora, minuto e fuso são definidos por `SCHEDULE_HOUR`,
+`SCHEDULE_MINUTE` e `SCHEDULE_TIME_ZONE`.
 
 ## Execução
 

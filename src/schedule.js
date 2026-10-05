@@ -34,11 +34,11 @@ function zonedDateToUtc({ year, month, day, hour, minute }, timeZone) {
   return new Date(result);
 }
 
-export function nextMonthlyRun(now, { timeZone, hour, minute }) {
+export function nextMonthlyRun(now, { timeZone, day = 1, hour, minute }) {
   const current = zonedParts(now, timeZone);
   let year = current.year;
   let month = current.month;
-  let candidate = zonedDateToUtc({ year, month, day: 1, hour, minute }, timeZone);
+  let candidate = zonedDateToUtc({ year, month, day, hour, minute }, timeZone);
 
   if (candidate.getTime() <= now.getTime()) {
     month += 1;
@@ -46,7 +46,7 @@ export function nextMonthlyRun(now, { timeZone, hour, minute }) {
       month = 1;
       year += 1;
     }
-    candidate = zonedDateToUtc({ year, month, day: 1, hour, minute }, timeZone);
+    candidate = zonedDateToUtc({ year, month, day, hour, minute }, timeZone);
   }
 
   return candidate;

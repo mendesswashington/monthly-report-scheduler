@@ -33,6 +33,9 @@ export function loadConfig() {
     minute: integer('SCHEDULE_MINUTE', 5, 0, 59),
     timeoutMs: integer('REQUEST_TIMEOUT_MS', 30000, 1000, 300000),
     maxAttempts: integer('REQUEST_MAX_ATTEMPTS', 3, 1, 10),
+    periodMode: ['previous-month', 'last-30-days'].includes(process.env.REPORT_PERIOD_MODE?.trim())
+      ? process.env.REPORT_PERIOD_MODE.trim()
+      : 'previous-month',
     manualTriggerSecret: process.env.MANUAL_TRIGGER_SECRET?.trim() || null,
     runOnStart: process.env.RUN_ON_START === 'true',
   };

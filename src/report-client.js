@@ -10,8 +10,10 @@ export async function triggerMonthlyReports(config, fetchImplementation = fetch)
         method: 'POST',
         headers: {
           accept: 'application/json',
+          'content-type': 'application/json',
           'x-job-secret': config.jobSecret,
         },
+        body: JSON.stringify({ periodMode: config.periodMode || 'previous-month' }),
         signal: AbortSignal.timeout(config.timeoutMs),
       });
       const text = await response.text();
